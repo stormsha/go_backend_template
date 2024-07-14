@@ -46,4 +46,4 @@ go run main.go
 
 [http://localhost:8080/docs/index.html](http://localhost:8080/docs/index.html)
 
-![效果图](https://image.stormsha.com/pic/swagger.png)
+![效果图](https://github.com/stormsha/go_backend_template/blob/master/swagger.png)
