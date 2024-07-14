@@ -1,0 +1,93 @@
+basePath: /api
+definitions:
+  router.Account:
+    properties:
+      user_account:
+        description: 账号
+        example: admin
+        type: string
+      user_password:
+        description: 密码
+        example: admin
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    name: stormsha
+    url: https://www.stormsha.com
+  description: Go Echo Web Api 服务高效开发模板
+  title: go backend template
+  version: v1.0
+paths:
+  /v1/login:
+    post:
+      consumes:
+      - application/json
+      description: 用户登录
+      parameters:
+      - description: 用户信息
+        in: body
+        name: account
+        required: true
+        schema:
+          $ref: '#/definitions/router.Account'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: 登录
+      tags:
+      - user
+  /v1/register:
+    post:
+      consumes:
+      - application/json
+      description: 用户注册
+      parameters:
+      - description: 注册信息
+        in: body
+        name: account
+        required: true
+        schema:
+          $ref: '#/definitions/router.Account'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: 注册
+      tags:
+      - user
+  /v1/sys/version:
+    get:
+      description: 查看api服务当前版本
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: 服务版本
+      tags:
+      - sys
+  /v1/user/detail:
+    get:
+      consumes:
+      - application/json
+      description: 获取用户信息
+      parameters:
+      - description: 用户ID
+        in: query
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: 用户信息
+      tags:
+      - user
+swagger: "2.0"

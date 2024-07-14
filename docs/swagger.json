@@ -1,0 +1,141 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Go Echo Web Api 服务高效开发模板",
+        "title": "go backend template",
+        "contact": {
+            "name": "stormsha",
+            "url": "https://www.stormsha.com"
+        },
+        "version": "v1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api",
+    "paths": {
+        "/v1/login": {
+            "post": {
+                "description": "用户登录",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "登录",
+                "parameters": [
+                    {
+                        "description": "用户信息",
+                        "name": "account",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/router.Account"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/v1/register": {
+            "post": {
+                "description": "用户注册",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "注册",
+                "parameters": [
+                    {
+                        "description": "注册信息",
+                        "name": "account",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/router.Account"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/v1/sys/version": {
+            "get": {
+                "description": "查看api服务当前版本",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "sys"
+                ],
+                "summary": "服务版本",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/v1/user/detail": {
+            "get": {
+                "description": "获取用户信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "用户信息",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "用户ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "router.Account": {
+            "type": "object",
+            "properties": {
+                "user_account": {
+                    "description": "账号",
+                    "type": "string",
+                    "example": "admin"
+                },
+                "user_password": {
+                    "description": "密码",
+                    "type": "string",
+                    "example": "admin"
+                }
+            }
+        }
+    }
+}

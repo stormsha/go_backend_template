@@ -1,0 +1,9 @@
+data:
+  JWT_SECRET_KEY: 'your_secret_key'
+  MYSQL_URL: ''
+  SQLITE_URL: '/database/sqlite3.db'
+  OBS_DOMAIN: 'xxx'
+  OBS_ENDPOINT: 'xxx'
+  OBS_BUCKET_NAME: 'xxx'
+  OBS_AK: 'xxx'
+  OBS_SK: 'xxx'

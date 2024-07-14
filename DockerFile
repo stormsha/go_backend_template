@@ -1,0 +1,7 @@
+FROM ubuntu:18.04
+
+WORKDIR /go_backend_template
+COPY . /go_backend_template
+
+
+
