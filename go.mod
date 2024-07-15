@@ -2,8 +2,6 @@ module stormsha.com/gbt
 
 go 1.21
 
-toolchain go1.21.1
-
 require (
 	github.com/glebarez/sqlite v1.11.0
 	github.com/labstack/echo/v4 v4.12.0
