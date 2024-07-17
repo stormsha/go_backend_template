@@ -2,7 +2,7 @@ package model
 
 type (
 	User struct {
-		ID           int    `json:"id" gorm:"primaryKey"`
+		ID           int    `json:"id" gorm:"primaryKey" query:"id"`
 		UserAccount  string `json:"user_account" gorm:"column:user_account"`
 		UserPassword string `json:"user_password" gorm:"column:user_password"`
 		UnionID      string `json:"union_id" gorm:"column:union_id"`

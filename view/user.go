@@ -86,7 +86,7 @@ func Login(args *model.User) (*model.LoginResp, error) {
 }
 
 func Detail(user *model.User) (*model.UserDetail, error) {
-	result := GormDB.Where("user_account = ?", user.UserAccount).First(&user)
+	result := GormDB.Where("id = ?", user.ID).First(&user)
 	if result.Error != nil {
 		logger.Errorf("获取用户失败 %v", result.Error)
 		return nil, errors.New("用户不存在！！！")

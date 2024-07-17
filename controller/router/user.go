@@ -71,9 +71,9 @@ func (u *User) login(ctx echo.Context) (interface{}, error) {
 // @Accept       json
 // @Produce      json
 // @Param 		 id query int true "用户ID"
+// @Param Authorization header string true "Authorization token"
 // @Success      200
 // @Router       /v1/user/detail [get]
-// version 获取 Web Api 版本号
 func (u *User) detail(ctx echo.Context) (interface{}, error) {
 	args := new(model.User)
 	err := ctx.Bind(args)

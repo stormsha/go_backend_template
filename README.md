@@ -47,3 +47,17 @@ go run main.go
 [http://localhost:8080/docs/index.html](http://localhost:8080/docs/index.html)
 
 ![效果图](https://github.com/stormsha/go_backend_template/blob/master/swagger.png)
+
+5. 如何更新接口文档
+
+把swag添加到环境变量中
+
+```bash
+go install github.com/swaggo/swag/cmd/swag@latest
+```
+
+执行命令更新接口文档
+
+```bash
+swag init
+```
